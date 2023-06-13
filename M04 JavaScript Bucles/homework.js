@@ -5,14 +5,36 @@ function obtenerMayor(x, y) {
    // Retornar el número más grande.
    // Si son iguales, retornar cualquiera de los dos.
    // Tu código:
+   if (x == y)
+   {
+      console.log("Ambos numeros son iguales: " + x);
+      return x;
+   } else if (x < y)
+   {
+      console.log(y + " es el numero mayor");
+      return y;
+   } else if (x > y)
+   {
+      console.log(x + " es el numero mayor");
+      return x;
+   }
 }
+obtenerMayor(22,11);
 
 function mayoriaDeEdad(edad) {
    // Determinar si la persona puede ingresar al evento según su edad.
    // Si tiene 18 años ó más debe retornar el string: "Allowed".
    // Caso contrario: "Not allowed".
    // Tu código:
+   if(edad >= 18)
+   {
+      return "Allowed";
+   } else
+   {
+      return "Not allowed";
+   }
 }
+console.log(mayoriaDeEdad(19));
 
 function conection(status) {
    // El argumento "status" representa el estado de conexión de un usuario.
@@ -21,7 +43,17 @@ function conection(status) {
    // De lo contrario, presumimos que el usuario está "Offline".
    // Retornar el estado de conexión del usuario.
    // Tu código:
+   if(status === 1)
+   {
+      return "Online";
+   } else if (status === 2)
+   {
+      return "Away";
+   } else {
+      return "Offline";
+   }
 }
+console.log(conection(1));
 
 function saludo(idioma) {
    // Retornar un saludo en tres diferentes lenguajes:
@@ -30,7 +62,21 @@ function saludo(idioma) {
    // Si "idioma" es "ingles", devuelve "Hello!".
    // Si "idioma" no es ninguno de los anteriores o es `undefined` devuelve "Hola!".
    // Tu código:
+   if(idioma=='aleman' || idioma=='Aleman' || idioma=='ALEMAN')
+   {
+      return "Guten Tag!";
+   } else if (idioma=='mandarin' || idioma=='Mandarin' || idioma=='MANDARIN')
+   {
+      return "Ni Hao!";
+   } else if (idioma=='ingles' || idioma=='Ingles' || idioma=="INGLES")
+   {
+      return "Hello!";
+   } else if (idioma == undefined || idioma != "ingles" || idioma != "aleman" || idioma!='mandarin')
+   {
+      return "Hola!";
+   }
 }
+console.log(saludo());
 
 function colors(color) {
    // La función recibe un color. Retornar el string correspondiente:
@@ -41,19 +87,55 @@ function colors(color) {
    // Si no es ninguno de esos colores           --> "Color not found".
    // IMPORTANTE: utilizar el statement SWITCH.
    // Tu código:
+   switch(color)
+   {
+   case 'blue':
+      color = "This is blue";
+      break;
+   case 'red':
+      color = "This is red";
+      break;
+   case 'green':
+      color = "This is green";
+      break;
+   case 'orange':
+      color = 'This is orange';
+      break;
+   default: 
+      color = "Color not found";
+      break;
+   }
+   return color;
 }
+console.log(colors('yellow'));
 
 function esDiezOCinco(num) {
    // Retornar true si "num" es 10 o 5.
    // De lo contrario, retornar false.
    // Tu código:
+   if(num==10 || num==5)
+   {
+      return true;
+   } else
+   {
+      return false;
+   }
 }
+console.log(esDiezOCinco(55));
 
 function estaEnRango(num) {
    // Retornar true si "num" es menor que 50 y mayor que 20.
    // De lo contrario, retornar false.
    // Tu código:
+   if (num<50 && num>20)
+   {
+      return true;
+   } else 
+   {
+      return false;
+   }
 }
+console.log(estaEnRango(49));
 
 function esEntero(num) {
    // Retornar true si "num" es un entero, ya sea positivo, negativo o cero.
@@ -62,7 +144,14 @@ function esEntero(num) {
    // Ejemplo: (-10) ---> true
    // De lo contrario, retorna false.
    // Tu código:
+   if (num % 1 == 0)
+   {
+      return true;
+   } else {
+      return false;
+   }
 }
+console.log(esEntero(-3.6));
 
 function fizzBuzz(num) {
    // Si "num" es divisible entre 3, retorna "fizz".
@@ -70,7 +159,24 @@ function fizzBuzz(num) {
    // Si "num" es divisible entre 3 y 5 (ambos), retorna "fizzbuzz".
    // De lo contrario, retorna false.
    // Tu código:
+   if (num % 3 == 0 && num % 5 == 0)
+   {
+      return "fizzbuzz";
+   } 
+   else if (num % 5 == 0)
+   {
+      return "buzz";
+   }
+   else if (num % 3 == 0)
+   {
+      return "fizz";
+   } 
+   else 
+   {
+      return false;
+   }
 }
+console.log(fizzBuzz(5));
 
 function operadoresLogicos(num1, num2, num3) {
    // La función recibe tres números distintos.
@@ -80,7 +186,28 @@ function operadoresLogicos(num1, num2, num3) {
    // Si todos los argumentos son cero, retornar ---> "Error".
    // Si no se cumple ninguna de las condiciones anteriores, retornar false.
    // Tu código:
+   if (num1 > num2 && num1 > num3 && num1>0)
+   {
+      return "Numero 1 es mayor y positivo";
+   }
+   else if (num1<0 || num2<0 || num3<0)
+   {
+      return "Hay negativos";
+   }
+   else if (num3>num1 && num3>num2)
+   {
+      return (num3 + 1);
+   }
+   else if (num1==num2 && num2==num3 && num3==0)
+   {
+      return "Error";
+   }
+   else 
+   {
+      return false;
+   }
 }
+console.log(operadoresLogicos(1,2,3));
 
 function esPrimo(num) {
    // Retornar true si "num" es primo.
@@ -89,26 +216,68 @@ function esPrimo(num) {
    // [Pista 2]: puedes resolverlo utilizando un `bucle for`.
    // [Nota]: los números negativos, 0 y 1 NO son números primos.
    // Tu código:
+   if (num === 2)
+   {
+      return true;
+   }
+   else if (num < 2)
+   {
+      return false;
+   }
+   for (var i = 2; i < num; i++)
+   {
+      if (num % i === 0)
+      {
+         return false;
+      }
+   } 
+   return true;
 }
+console.log(esPrimo(8));
 
 function esVerdadero(valor) {
    // Si "valor" es verdadero retornar "Soy verdadero".
    // Caso contrario, retornar "Soy falso".
    // Tu código:
+   if (valor == true)
+   {
+      return "Soy verdadero";
+   }
+   else 
+   {
+      return "Soy falso";
+   }
 }
+console.log(esVerdadero(false));
 
 function tieneTresDigitos(num) {
    // Si el número recibido tiene tres dígitos retornar true.
    // Caso contrario, retornar false.
    // Tu código:
+   if ((num.toString()).length === 3)
+   {
+      return true;
+   }
+   else 
+   {
+      return false;
+   }
 }
+console.log(tieneTresDigitos(0));
 
 function doWhile(num) {
    // Implementar una función que aumente el valor recibido en 5 hasta un límite de 8 veces.
    // Retornar el valor final.
    // Utilizar el bucle Do-While.
    // Tu código:
+   var a = 0;
+   do {
+      num = num + 5;
+      a = a + 1;
+   } while (a < 8);
+   return num;
 }
+console.log(doWhile(3));
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
 module.exports = {
